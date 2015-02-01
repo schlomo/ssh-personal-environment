@@ -1,5 +1,5 @@
-ssh-personal-environment (0) stable; urgency=low
+ssh-personal-environment (1) stable; urgency=low
 
   * Initial release.
 
- -- Schlomo Schapiro <schlomo+ssh-personal-environment@schapiro.org>  Sun, 01 Feb 2016 21:21:21 +0100
+ -- Schlomo Schapiro <schlomo+ssh-personal-environment@schapiro.org>  Sun, 01 Feb 2015 21:20:43 +0100
