@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+if [ "$1" = configure ]; then
+	sed -i -f - /etc/ssh/sshd_config <<-EOF
+	\${
+	a # this content comes from the ssh-personal-environment package
+	a AcceptEnv SSH_PERS_ENV_DATA SSH_PERS_ENV_FILES SSH_PERS_ENV_DEBUG
+	a # end of content from the ssh-personal-environment package
+	}
+	/SSH_PERS_ENV_/d
+	/ssh-personal-environment package/d
+	EOF
+	sed -i -f - /etc/ssh/ssh_config <<-EOF
+	\${
+	a # this content comes from the ssh-personal-environment package
+	a SendEnv SSH_PERS_ENV_DATA SSH_PERS_ENV_FILES SSH_PERS_ENV_DEBUG
+	a # end of content from the ssh-personal-environment package
+	}
+	/SSH_PERS_ENV_/d
+	/ssh-personal-environment package/d
+	EOF
+ 
+	service ssh restart || :
+fi

@@ -1,0 +1,15 @@
+Source: ssh-personal-environment
+Maintainer: Schlomo Schapiro <schlomo+ssh-personal-environment@schapiro.org>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+Homepage: https://github.com/schlomo/ssh-personal-environment
+Build-Depends: debhelper (>= 9) 
+
+Package: ssh-personal-environment
+Architecture: all
+Depends: ${misc:Depends}, openssh-client, openssh-server
+Description: Copy personal environment through SSH connections
+ What it does:
+  * Copies files given in SSH_PERS_ENV_FILES to SSH server
+  * Use environment variables to transport data over SSH connection

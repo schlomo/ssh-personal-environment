@@ -1,0 +1,6 @@
+out/*
+out
+debian/ssh-personal-environment*
+debian/files
+README.1.html
+README.1

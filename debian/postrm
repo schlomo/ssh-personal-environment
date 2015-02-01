@@ -1,0 +1,13 @@
+#!/bin/bash -e
+if [[ "$1" = remove ]] ; then
+	sed -i -f - /etc/ssh/sshd_config <<-EOF
+	/SSH_PERS_ENV_/d
+	/ssh-personal-environment package/d
+	EOF
+	sed -i -f - /etc/ssh/ssh_config <<-EOF
+	/SSH_PERS_ENV_/d
+	/ssh-personal-environment package/d
+	EOF
+ 
+	service ssh restart || :
+fi
