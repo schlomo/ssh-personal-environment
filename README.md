@@ -39,6 +39,19 @@ And please submit a pull request with packaging automation for your environment.
 
 `update_ssh_personal_environment` is a shell function because it modifies the environment of your shell.
 
+The size of data that can be transferred is limited. To find out how much random data your system can transfer, you can use the `determine_maximum_transfer_size.sh` script to test your system:
+
+```
+$ MIN=90 STEP=1 ./determine_maximum_transfer_size.sh ubuntu@ec2-54-154-241-31.eu-west-1.compute.amazonaws.com
+TESTING 90 KB
+TESTING 91 KB
+TESTING 92 KB
+TESTING 93 KB
+TESTING 94 KB
+TESTING 95 KB
+FAILED to transfer 95 KB, safe size is 94 KB
+```
+
 ## DEVELOPMENT
 
 To build simply run `make deb` from the source distribution.
